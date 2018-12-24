@@ -1,6 +1,6 @@
-# :sunrise_over_mountains: vim-textobj-pipe
+# :sunrise_over_mountains: vim-textobj-surround
 
-This plugin adds "|" (pipe) as a text-object.
+This plugin adds various symbols as surrounding text-objects.
 
 Table of Contents
 -----------------
@@ -22,27 +22,27 @@ support:
 mkdir ~/.vim/pack/plugin/start/vim-textobj-user
 git clone https://github.com/kana/vim-textobj-user.git ~/.vim/pack/plugin/start/vim-textobj-user
 
-mkdir ~/.vim/pack/plugin/start/vim-textobj-pipe
-git clone https://github.com/EvanQuan/vim-textobj-pipe.git ~/.vim/pack/plugin/start/vim-textobj-pipe
+mkdir ~/.vim/pack/plugin/start/vim-textobj-surround
+git clone https://github.com/EvanQuan/vim-textobj-surround.git ~/.vim/pack/plugin/start/vim-textobj-surround
 ```
 
 #### [Vim-Plug](https://github.com/junegunn/vim-plug)
 
 1. Add `Plug 'kana/vim-textobj-user'` to your `vimrc` file.
-2. Add `Plug 'EvanQuan/vim-textobj-pipe'` to your `vimrc` file.
+2. Add `Plug 'EvanQuan/vim-textobj-surround'` to your `vimrc` file.
 3. Reload your `vimrc` or restart.
 4. Run `:PlugInstall`
 
 #### [Vundle](https://github.com/VundleVim/Vundle.vim)
 
 1. Add `Plugin 'kana/vim-textobj-user'` to your `vimrc` file.
-2. Add `Plugin 'EvanQuan/vim-textobj-pipe'` to your `vimrc` file.
+2. Add `Plugin 'EvanQuan/vim-textobj-surround'` to your `vimrc` file.
 3. Reload your `vimrc` or restart.
 4. Run `:BundleInstall`
 
 #### [NeoBundle](https://github.com/Shougo/neobundle.vim)
 
-1. Add `NeoBundle 'EvanQuan/vim-textobj-pipe'` to your `vimrc` file.
+1. Add `NeoBundle 'EvanQuan/vim-textobj-surround'` to your `vimrc` file.
 2. Add `NeoBundle 'kana/vim-textobj-user'` to your `vimrc` file.
 3. Reload your `vimrc` or restart.
 4. Run `:NeoUpdate`
@@ -52,12 +52,14 @@ git clone https://github.com/EvanQuan/vim-textobj-pipe.git ~/.vim/pack/plugin/st
 ```bash
 git clone https://github.com/kana/vim-textobj-user.git ~/.vim/bundle/vim-textobj-user
 
-git clone https://github.com/EvanQuan/vim-textobj-pipe.git ~/.vim/bundle/vim-textobj-pipe
+git clone https://github.com/EvanQuan/vim-textobj-surround.git ~/.vim/bundle/vim-textobj-surround
 ```
 
 ## Usage
 
-The **textobj-pipe** plugin provides two new text-objects which are triggered
+**TODO elaborate on other text objects**
+
+The **textobj-surround** plugin provides two new text-objects which are triggered
 by `a|` and `i|` respectively.
 
 For example, suppose you have the following markdown table:
