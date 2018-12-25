@@ -40,7 +40,13 @@ CONTENTS                                           *textobj-delimiters-contents*
 ==============================================================================
 1. Intro                                              *textobj-delimiters-intro*
 
-TODO
+Block delimiters are symbols that mark the beginning and end of a region of
+text. With Vim's |text-objects|, these delimited text sections can be edited
+with operators and motions. The block delimiters that Vim already support
+include `(parentheses)`, `[brackets]`, `{braces}`, `"double quotes"`,
+`'single quotes'`, `<angled brackets>`, and `<a>tags<\a>`. This plugin adds
+10 additional block delimiters.
+
 ==============================================================================
 2. Symbols                                          *textobj-delimiters-symbols*
 
@@ -127,7 +133,6 @@ If you want to delete the hot-link, you can do the following (cursor position
 marked by *):
 
 `|bad*tag|` and type `da|`, which will delete the hot-link.
-
 
 ------------------------------------------------------------------------------
 3.7 Plus Sign                                          *textobj-delimiters-plus*

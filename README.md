@@ -2,6 +2,13 @@
 
 This plugin adds various symbols as delimiting text-objects.
 
+Block delimiters are symbols that mark the beginning and end of a region of
+text. With Vim's text-objects, these delimited text sections can be edited
+with operators and motions. The block delimiters that Vim already support
+include `(parentheses)`, `[brackets]`, `{braces}`, `"double quotes"`,
+`'single quotes'`, `<angled brackets>`, and `<a>tags<\a>`. This plugin adds
+10 additional block delimiters.
+
 Table of Contents
 -----------------
 1. [Installation](#installation)
