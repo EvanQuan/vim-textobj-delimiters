@@ -1,9 +1,13 @@
 " ============================================================================
 " File:       delimiters.vim
 " Maintainer: https://github.com/EvanQuan/vim-textobj-delimiters/
-" Version:    1.2.0
+" Version:    1.3.0
 "
-" A Vim plugin that adds various symbols as delimiting text-objects.
+" A Vim plugin that adds various symbols as delimiting text-objects. You can
+" learn more about this with:
+"
+"     :help textobj-delimiters
+"
 " ============================================================================
 
 if exists('g:loaded_textobj_delimiters')
@@ -78,6 +82,40 @@ function! s:select_i_backslash()
 endfunction
 
 " }}}
+" Colon {{{
+
+call textobj#user#plugin('colon', {
+\      '-': {
+\        '*sfile*': expand('<sfile>:p'),
+\        'select-a': 'a:',  '*select-a-function*': 's:select_a_colon',
+\        'select-i': 'i:',  '*select-i-function*': 's:select_i_colon'
+\      }
+\    })
+
+function! s:select_a_colon()
+  normal! F:
+
+  let end_pos = getpos('.')
+
+  normal! f:
+
+  let start_pos = getpos('.')
+  return ['v', start_pos, end_pos]
+endfunction
+
+function! s:select_i_colon()
+  normal! T:
+
+  let end_pos = getpos('.')
+
+  normal! t:
+
+  let start_pos = getpos('.')
+
+  return ['v', start_pos, end_pos]
+endfunction
+
+" }}}
 " Dollar {{{
 
 call textobj#user#plugin('dollar', {
@@ -105,6 +143,40 @@ function! s:select_i_dollar()
   let end_pos = getpos('.')
 
   normal! t$
+
+  let start_pos = getpos('.')
+
+  return ['v', start_pos, end_pos]
+endfunction
+
+" }}}
+" Equal {{{
+
+call textobj#user#plugin('equal', {
+\      '-': {
+\        '*sfile*': expand('<sfile>:p'),
+\        'select-a': 'a=',  '*select-a-function*': 's:select_a_equal',
+\        'select-i': 'i=',  '*select-i-function*': 's:select_i_equal'
+\      }
+\    })
+
+function! s:select_a_equal()
+  normal! F=
+
+  let end_pos = getpos('.')
+
+  normal! f=
+
+  let start_pos = getpos('.')
+  return ['v', start_pos, end_pos]
+endfunction
+
+function! s:select_i_equal()
+  normal! T=
+
+  let end_pos = getpos('.')
+
+  normal! t=
 
   let start_pos = getpos('.')
 
@@ -207,6 +279,40 @@ function! s:select_i_percent()
   let end_pos = getpos('.')
 
   normal! t%
+
+  let start_pos = getpos('.')
+
+  return ['v', start_pos, end_pos]
+endfunction
+
+" }}}
+" Period {{{
+
+call textobj#user#plugin('period', {
+\      '-': {
+\        '*sfile*': expand('<sfile>:p'),
+\        'select-a': 'a.',  '*select-a-function*': 's:select_a_period',
+\        'select-i': 'i.',  '*select-i-function*': 's:select_i_period'
+\      }
+\    })
+
+function! s:select_a_period()
+  normal! F.
+
+  let end_pos = getpos('.')
+
+  normal! f.
+
+  let start_pos = getpos('.')
+  return ['v', start_pos, end_pos]
+endfunction
+
+function! s:select_i_period()
+  normal! T.
+
+  let end_pos = getpos('.')
+
+  normal! t.
 
   let start_pos = getpos('.')
 

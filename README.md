@@ -72,9 +72,12 @@ start and end of a region of text:
 |:------:|:---------------:|
 | *      | asterisk        |
 | \      | backslash       |
+| :      | colon           |
 | $      | dollar sign     |
+| =      | equal sign      |
 | -      | minus sign/dash |
 | %      | percent sign    |
+| .      | period          |
 | \|     | pipe            |
 | +      | plus sign       |
 | ?      | question mark   |
@@ -104,10 +107,32 @@ files, marking `*italicized*` or `**bold**` text.
 
 In Windows-style path names, directories are `separated\with\backslashes`.
 
+#### Colon
+
+For Vim modelines, values are delimited with colons, such as:
+
+```vim
+vim:tw=78:ts=8:ft=help:norl:
+```
+
+Certain tags, such as markdown emojis are also also delimited with colons: >
+
+```markdown
+:sunrise_over_mountains:
+```
+
 #### Dollar Sign
 
 In LaTeX files, inline math mode is delimited with `$single dollar signs$`,
 while `$$double dollar signs$$` delimits display math mode.
+
+#### Equal Sign
+
+In certain text formats, titles are delimited with equal sign:
+
+```
+=== such as this ===
+```
 
 #### Minus Sign/Dash
 
@@ -121,6 +146,18 @@ In some web templates, language boundaries are
 
 ```
 <% surrounded with template delimiters such as this %>
+```
+
+#### Period
+
+In many programming languages, periods denote member variables of a class or
+object, be it an attribute or method. If these member variables are written in
+`snake_case`, or `kebab-case`, then using **word** or **WORD** text-objects will
+not be enough to edit them. For example:
+
+```
+foo.delete-this.bar
+foo.delete_this.bar
 ```
 
 #### Pipe

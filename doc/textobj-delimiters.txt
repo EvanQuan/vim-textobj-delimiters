@@ -27,14 +27,17 @@ CONTENTS                                           *textobj-delimiters-contents*
     3. Usage................................|textobj-delimiters-usage|
         3.1 Asterisks.......................|textobj-delimiters-asterisks|
         3.2 Backslash.......................|textobj-delimiters-backslash|
-        3.3 Dollar Sign.....................|textobj-delimiters-dollar|
-        3.4 Minus Sign/Dash.................|textobj-delimiters-minus|
-        3.5 Percent Sign....................|textobj-delimiters-percent|
-        3.6 Pipe............................|textobj-delimiters-pipe|
-        3.7 Plus Sign.......................|textobj-delimiters-plus|
-        3.8 Question Mark...................|textobj-delimiters-question|
-        3.9 Slash...........................|textobj-delimiters-slash|
-        3.10 Underscore.....................|textobj-delimiters-underscore|
+        3.3 Colon...........................|textobj-delimiters-colon|
+        3.4 Dollar Sign.....................|textobj-delimiters-dollar|
+        3.5 Equal Sign......................|textobj-delimiters-equal|
+        3.6 Minus Sign/Dash.................|textobj-delimiters-minus|
+        3.7 Percent Sign....................|textobj-delimiters-percent|
+        3.8 Period..........................|textobj-delimiters-period|
+        3.9 Pipe............................|textobj-delimiters-pipe|
+        3.10 Plus Sign......................|textobj-delimiters-plus|
+        3.11 Question Mark..................|textobj-delimiters-question|
+        3.12 Slash..........................|textobj-delimiters-slash|
+        3.13 Underscore.....................|textobj-delimiters-underscore|
     4. About................................|textobj-delimiters-about|
 
 ==============================================================================
@@ -86,27 +89,57 @@ files, marking `*italicized*` or `**bold**` text.
 In Windows-style path names, directories are `separated\with\backslashes`.
 
 ------------------------------------------------------------------------------
-3.3 Dollar Sign                                      *textobj-delimiters-dollar*
+3.3 Colon                                             *textobj-delimiters-colon*
+
+For Vim modelines, values are delimited with colons, such as this file (wow,
+how meta): >
+
+        vim:tw=78:ts=8:ft=help:norl:
+<
+Certain tags, such as markdown emojis are also also delimited with colons: >
+
+        :sunrise_over_mountains:
+<
+------------------------------------------------------------------------------
+3.4 Dollar Sign                                      *textobj-delimiters-dollar*
 
 In LaTeX files, inline math mode is delimited with `$single dollar signs$`,
 while `$$double dollar signs$$` delimits display math mode.
 
 ------------------------------------------------------------------------------
-3.4 Minus Sign/Dash                                   *textobj-delimiters-minus*
+3.5 Equal Sign                                        *textobj-delimiters-equal*
+
+In certain text formats, titles are delimited with equal sign: >
+
+        === such as this ===
+<
+------------------------------------------------------------------------------
+3.6 Minus Sign/Dash                                   *textobj-delimiters-minus*
 
 Languages like Lisp and css often use kebab case variable names, which
 `separate-words-with-dashes`. In webiste URLs, text of certain directories or
 titles are often in kebab case as well.
 
 ------------------------------------------------------------------------------
-3.5 Percent Sign                                    *textobj-delimiters-percent*
+3.7 Percent Sign                                    *textobj-delimiters-percent*
 
 In some web templates, language boundaries are >
 
         <% surrounded with template delimiters such as this %>
 <
 ------------------------------------------------------------------------------
-3.6 Pipe                                               *textobj-delimiters-pipe*
+3.8 Period                                           *textobj-delimiters-period*
+
+In many programming languages, periods denote member variables of a class or
+object, be it an attribute or method. If these member variables are written in
+`snake_case`, or `kebab-case`, then using |word| or |WORD| text-objects will
+not be enough to edit them. For example: >
+
+        foo.delete-this.bar
+        foo.delete_this.bar
+
+------------------------------------------------------------------------------
+3.9 Pipe                                               *textobj-delimiters-pipe*
 
 Hot-links in Vim help documentation and markdown tables delimit text with
 pipe characters.
@@ -135,7 +168,7 @@ marked by *):
 `|bad*tag|` and type `da|`, which will delete the hot-link.
 
 ------------------------------------------------------------------------------
-3.7 Plus Sign                                          *textobj-delimiters-plus*
+3.10 Plus Sign                                         *textobj-delimiters-plus*
 
 In mathematical expressions or string concatenation, certain text may
 incidentally be delimited with plus signs such as: >
@@ -148,20 +181,20 @@ Admittedly, there does not seem to be much use to this as the quote and
 word text objects can achieve the same thing.
 
 ------------------------------------------------------------------------------
-3.8 Question Mark                                  *textobj-delimiters-question*
+3.11 Question Mark                                 *textobj-delimiters-question*
 
 In XML, processing instructions are >
 
         <? delimited with question marks ?>
 <
 ------------------------------------------------------------------------------
-3.9 Slash                                             *textobj-delimiters-slash*
+3.12 Slash                                            *textobj-delimiters-slash*
 
 In website URLs and Unix-style path names, directories are
 `separated/with/slashes`.
 
 ------------------------------------------------------------------------------
-3.10 Underscore                                  *textobj-delimiters-underscore*
+3.13 Underscore                                  *textobj-delimiters-underscore*
 
 Languages like C, Python, and Ruby often use snake case variable names, which
 `separate_words_with_underscores`. In website URLs, text of certain
