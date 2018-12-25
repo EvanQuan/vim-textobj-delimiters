@@ -81,6 +81,11 @@ start and end of a region of text:
 | /      | slash           |
 | _      | underscore      |
 
+*But what about commas?*
+
+[vim-textobj-parameter](https://github.com/sgur/vim-textobj-parameter)
+provides support for function parameters or comma-separated lists.
+
 ## Usage
 
 Similar to how quotes, parentheses, and brackets amongst other block
