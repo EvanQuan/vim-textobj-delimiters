@@ -1,11 +1,12 @@
-# :sunrise_over_mountains: vim-textobj-symbols
+# :sunrise_over_mountains: vim-textobj-delimiters
 
-This plugin adds various symbols as surrounding text-objects.
+This plugin adds various symbols as delimiting text-objects.
 
 Table of Contents
 -----------------
 1. [Installation](#installation)
-2. [Usage](#usage)
+2. [Symbols](#symbols)
+3. [Usage](#usage)
 
 ## Installation
 
@@ -22,27 +23,27 @@ support:
 mkdir ~/.vim/pack/plugin/start/vim-textobj-user
 git clone https://github.com/kana/vim-textobj-user.git ~/.vim/pack/plugin/start/vim-textobj-user
 
-mkdir ~/.vim/pack/plugin/start/vim-textobj-symbols
-git clone https://github.com/EvanQuan/vim-textobj-symbols.git ~/.vim/pack/plugin/start/vim-textobj-symbols
+mkdir ~/.vim/pack/plugin/start/vim-textobj-delimiters
+git clone https://github.com/EvanQuan/vim-textobj-delimiters.git ~/.vim/pack/plugin/start/vim-textobj-delimiters
 ```
 
 #### [Vim-Plug](https://github.com/junegunn/vim-plug)
 
 1. Add `Plug 'kana/vim-textobj-user'` to your `vimrc` file.
-2. Add `Plug 'EvanQuan/vim-textobj-symbols'` to your `vimrc` file.
+2. Add `Plug 'EvanQuan/vim-textobj-delimiters'` to your `vimrc` file.
 3. Reload your `vimrc` or restart.
 4. Run `:PlugInstall`
 
 #### [Vundle](https://github.com/VundleVim/Vundle.vim)
 
 1. Add `Plugin 'kana/vim-textobj-user'` to your `vimrc` file.
-2. Add `Plugin 'EvanQuan/vim-textobj-symbols'` to your `vimrc` file.
+2. Add `Plugin 'EvanQuan/vim-textobj-delimiters'` to your `vimrc` file.
 3. Reload your `vimrc` or restart.
 4. Run `:BundleInstall`
 
 #### [NeoBundle](https://github.com/Shougo/neobundle.vim)
 
-1. Add `NeoBundle 'EvanQuan/vim-textobj-symbols'` to your `vimrc` file.
+1. Add `NeoBundle 'EvanQuan/vim-textobj-delimiters'` to your `vimrc` file.
 2. Add `NeoBundle 'kana/vim-textobj-user'` to your `vimrc` file.
 3. Reload your `vimrc` or restart.
 4. Run `:NeoUpdate`
@@ -52,15 +53,68 @@ git clone https://github.com/EvanQuan/vim-textobj-symbols.git ~/.vim/pack/plugin
 ```bash
 git clone https://github.com/kana/vim-textobj-user.git ~/.vim/bundle/vim-textobj-user
 
-git clone https://github.com/EvanQuan/vim-textobj-symbols.git ~/.vim/bundle/vim-textobj-symbols
+git clone https://github.com/EvanQuan/vim-textobj-delimiters.git ~/.vim/bundle/vim-textobj-delimiters
 ```
+
+## Symbols
+
+The following symbols are now recognized as block delimiters, marking the
+start and end of a region of text:
+
+| Symbol | Name            |
+|:------:|:---------------:|
+| *      | asterisk        |
+| \      | backslash       |
+| $      | dollar sign     |
+| -      | minus sign/dash |
+| %      | percent sign    |
+| |      | pipe            |
+| +      | plus sign       |
+| ?      | question mark   |
+| /      | slash           |
+| _      | underscore      |
 
 ## Usage
 
-**TODO elaborate on other text objects**
+Similar to how quotes, parentheses, and brackets amongst other block
+delimiters can mark the start and end of a region of text and can have edited
+with the 'c' (change), 'd' (delete), 'v' (visual) and 'y' (yank) operators,
+vim-textobj-delimiters provides several new text-objects which are triggered
+by `a` and `i` motions. While there may be any number of uses for these
+delimiters, here are some examples for where they may be used.
 
-The **textobj-symbols** plugin provides two new text-objects which are triggered
-by `a|` and `i|` respectively.
+#### Asterisks
+
+Selections of text surrounded by asterisks (\*) is fairly common in markdown
+files, marking `*italicized*` or `**bold**` text.
+
+#### Backslash
+
+In Windows-style path names, directories are `separated\with\backslashes`.
+
+#### Dollar Sign
+
+In LaTeX files, inline math mode is delimited with `$single dollar signs$`,
+while `$$double dollar signs$$` delimits display math mode.
+
+#### Minus Sign/Dash
+
+Languages like Lisp and css often use kebab case variable names, which
+`separate-words-with-dashes`. In webiste URLs, text of certain directories or
+titles are often in kebab case as well.
+
+#### Percent Sign
+
+In some web templates, language boundaries are
+
+```
+<% surrounded with template delimiters such as this %>
+```
+
+#### Pipe
+
+Hot-links in Vim help documentation and markdown tables delimit text with
+pipe characters.
 
 For example, suppose you have the following markdown table:
 
@@ -87,3 +141,35 @@ If you want to delete the hot-link, you can do the following (cursor position
 marked by \*):
 
 `|bad*tag|` and type `da|`, which will delete the hot-link.
+
+#### Plus Sign
+
+In mathematical expressions or string concatenation, certain text may
+incidentally be delimited with plus signs such as:
+
+```
+a = 4 + 457 + 12
+
+message = "Hello" + "there" + "General" + "Kenobi"
+```
+
+Admittedly, there does not seem to be much use to this as the quote and
+word text objects can achieve the same thing.
+
+#### Question Mark
+
+In XML, processing instructions are
+```
+<? delimited with question marks ?>
+```
+
+#### Slash
+
+In website URLs and Unix-style path names, directories are
+`separated/with/slashes`.
+
+#### Underscore
+
+Languages like C, Python, and Ruby often use snake case variable names, which
+`separate_words_with_underscores`. In website URLs, text of certain
+directories or titles are often in snake case as well.

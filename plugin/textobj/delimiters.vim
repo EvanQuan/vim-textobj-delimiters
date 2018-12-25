@@ -1,12 +1,12 @@
 " ============================================================================
-" File:       symbols.vim
-" Maintainer: https://github.com/EvanQuan/vim-textobj-symbols/
-" Version:    1.1.1
+" File:       delimiters.vim
+" Maintainer: https://github.com/EvanQuan/vim-textobj-delimiters/
+" Version:    1.2.0
 "
-" A Vim plugin that adds various symbols as surrounding text-objects.
+" A Vim plugin that adds various symbols as delimiting text-objects.
 " ============================================================================
 
-if exists('g:loaded_textobj_symbols')
+if exists('g:loaded_textobj_delimiters')
   finish
 endif
 
@@ -284,6 +284,42 @@ function! s:select_i_pipe()
 endfunction
 
 " }}}
+" Question Mark {{{
+
+call textobj#user#plugin('question', {
+\      '-': {
+\        '*sfile*': expand('<sfile>:p'),
+\        'select-a': 'a?',  '*select-a-function*': 's:select_a_question',
+\        'select-i': 'i?',  '*select-i-function*': 's:select_i_question'
+\      }
+\    })
+
+
+
+function! s:select_a_question()
+  normal! F?
+
+  let end_pos = getpos('.')
+
+  normal! f?
+
+  let start_pos = getpos('.')
+  return ['v', start_pos, end_pos]
+endfunction
+
+function! s:select_i_question()
+  normal! T?
+
+  let end_pos = getpos('.')
+
+  normal! t?
+
+  let start_pos = getpos('.')
+
+  return ['v', start_pos, end_pos]
+endfunction
+
+" }}}
 " Underscore {{{
 
 call textobj#user#plugin('underscore', {
@@ -319,4 +355,4 @@ endfunction
 
 " }}}
 
-let g:loaded_textobj_symbols = 1
+let g:loaded_textobj_delimiters = 1

@@ -1,0 +1,172 @@
+*textobj-delimiters.txt*   For Vim version 8.1     Last change: 2018 December 24
+
+                     _____         _   _____ _     _                           ~
+                    |_   _|       | | |  _  | |   (_)                          ~
+                      | | _____  _| |_| | | | |__  _                           ~
+                      | |/ _ \ \/ / __| | | | '_ \| |                          ~
+                      | |  __/>  <| |_\ \_/ / |_) | |                          ~
+                      \_/\___/_/\_\\__|\___/|_.__/| |                          ~
+                ______     _ _           _ _     _/ |                          ~
+                |  _  \   | (_)         (_) |   |__/                           ~
+                | | | |___| |_ _ __ ___  _| |_ ___ _ __ ___                    ~
+                | | | / _ \ | | '_ ` _ \| | __/ _ \ '__/ __|                   ~
+                | |/ /  __/ | | | | | | | | ||  __/ |  \__ \                   ~
+                |___/ \___|_|_|_| |_| |_|_|\__\___|_|  |___/                   ~
+
+
+                 A Vim plugin that adds various symbols as                     ~
+                 delimiting text objects.                                      ~
+
+                              Reference Manual                                 ~
+
+==============================================================================
+CONTENTS                                           *textobj-delimiters-contents*
+
+    1. Intro................................|textobj-delimiters-intro|
+    2. Symbols..............................|textobj-delimiters-symbols|
+    3. Usage................................|textobj-delimiters-usage|
+        3.1 Asterisks.......................|textobj-delimiters-asterisks|
+        3.2 Backslash.......................|textobj-delimiters-backslash|
+        3.3 Dollar Sign.....................|textobj-delimiters-dollar|
+        3.4 Minus Sign/Dash.................|textobj-delimiters-minus|
+        3.5 Percent Sign....................|textobj-delimiters-percent|
+        3.6 Pipe............................|textobj-delimiters-pipe|
+        3.7 Plus Sign.......................|textobj-delimiters-plus|
+        3.8 Question Mark...................|textobj-delimiters-question|
+        3.9 Slash...........................|textobj-delimiters-slash|
+        3.10 Underscore.....................|textobj-delimiters-underscore|
+    4. About................................|textobj-delimiters-about|
+
+==============================================================================
+1. Intro                                              *textobj-delimiters-intro*
+
+TODO
+==============================================================================
+2. Symbols                                          *textobj-delimiters-symbols*
+
+The following symbols are now recognized as block delimiters, marking the
+start and end of a region of text: >
+
+                  *             asterisk
+                  \             backslash
+                  $             dollar sign
+                  -             minus sign/dash
+                  %             percent sign
+                  |             pipe
+                  +             plus sign
+                  ?             question mark
+                  /             slash
+                  _             underscore
+<
+==============================================================================
+3. Usage                                              *textobj-delimiters-usage*
+
+Similar to how quotes, parentheses, and brackets amongst other block
+delimiters can mark the start and end of a region of text and can have edited
+with the 'c' (change), 'd' (delete), 'v' (visual) and 'y' (yank) operators,
+vim-textobj-delimiters provides several new |text-objects| which are triggered
+by `a` and `i` motions. While there may be any number of uses for these
+delimiters, here are some examples for where they may be used.
+
+------------------------------------------------------------------------------
+3.1 Asterisks                                     *textobj-delimiters-asterisks*
+
+Selections of text surrounded by asterisks (*) is fairly common in markdown
+files, marking `*italicized*` or `**bold**` text.
+
+------------------------------------------------------------------------------
+3.2 Backslash                                     *textobj-delimiters-backslash*
+
+In Windows-style path names, directories are `separated\with\backslashes`.
+
+------------------------------------------------------------------------------
+3.3 Dollar Sign                                      *textobj-delimiters-dollar*
+
+In LaTeX files, inline math mode is delimited with `$single dollar signs$`,
+while `$$double dollar signs$$` delimits display math mode.
+
+------------------------------------------------------------------------------
+3.4 Minus Sign/Dash                                   *textobj-delimiters-minus*
+
+Languages like Lisp and css often use kebab case variable names, which
+`separate-words-with-dashes`. In webiste URLs, text of certain directories or
+titles are often in kebab case as well.
+
+------------------------------------------------------------------------------
+3.5 Percent Sign                                    *textobj-delimiters-percent*
+
+In some web templates, language boundaries are >
+
+        <% surrounded with template delimiters such as this %>
+<
+------------------------------------------------------------------------------
+3.6 Pipe                                               *textobj-delimiters-pipe*
+
+Hot-links in Vim help documentation and markdown tables delimit text with
+pipe characters.
+
+For example, suppose you have the following markdown table: >
+
+        | Cats         | Dogs     |
+        |:------------:|:--------:|
+        | Mr. Whiskers | Snuffles |
+        | Oscar        | Bella    |
+<
+If you want to change 'Mr. Whiskers' to 'Tigger', you can do the following
+(cursor position marked by *):
+
+`| Mr. Wh*iskers |` and type `ci|` to get `|*|`, where you can make your
+replacement `| Tigger |` .
+
+Another example is if you are writing Vim help documentation and have
+a hot-link, which is a word surrounded with pipes as such: >
+
+        |bad tag|
+<
+If you want to delete the hot-link, you can do the following (cursor position
+marked by *):
+
+`|bad*tag|` and type `da|`, which will delete the hot-link.
+
+
+------------------------------------------------------------------------------
+3.7 Plus Sign                                          *textobj-delimiters-plus*
+
+In mathematical expressions or string concatenation, certain text may
+incidentally be delimited with plus signs such as: >
+
+        a = 4 + 457 + 12
+
+        message = "Hello" + "there" + "General" + "Kenobi"
+<
+Admittedly, there does not seem to be much use to this as the quote and
+word text objects can achieve the same thing.
+
+------------------------------------------------------------------------------
+3.8 Question Mark                                  *textobj-delimiters-question*
+
+In XML, processing instructions are >
+
+        <? delimited with question marks ?>
+<
+------------------------------------------------------------------------------
+3.9 Slash                                             *textobj-delimiters-slash*
+
+In website URLs and Unix-style path names, directories are
+`separated/with/slashes`.
+
+------------------------------------------------------------------------------
+3.10 Underscore                                  *textobj-delimiters-underscore*
+
+Languages like C, Python, and Ruby often use snake case variable names, which
+`separate_words_with_underscores`. In website URLs, text of certain
+directories or titles are often in snake case as well.
+
+==============================================================================
+4. About                                              *textobj-delimiters-about*
+
+You can find the most updated version of the plugin from:
+
+        http://github.com/EvanQuan/vim-textobj-delimiters
+
+vim:tw=78:ts=8:ft=help:norl:
