@@ -68,7 +68,7 @@ start and end of a region of text:
 | $      | dollar sign     |
 | -      | minus sign/dash |
 | %      | percent sign    |
-| |      | pipe            |
+| \|     | pipe            |
 | +      | plus sign       |
 | ?      | question mark   |
 | /      | slash           |
