@@ -1,12 +1,12 @@
 " ============================================================================
-" File:       surround.vim
-" Maintainer: https://github.com/EvanQuan/vim-textobj-surround/
-" Version:    1.1.0
+" File:       symbols.vim
+" Maintainer: https://github.com/EvanQuan/vim-textobj-symbols/
+" Version:    1.1.1
 "
 " A Vim plugin that adds various symbols as surrounding text-objects.
 " ============================================================================
 
-if exists('g:loaded_textobj_surround')
+if exists('g:loaded_textobj_symbols')
   finish
 endif
 
@@ -319,4 +319,4 @@ endfunction
 
 " }}}
 
-let g:loaded_textobj_surround = 1
+let g:loaded_textobj_symbols = 1
