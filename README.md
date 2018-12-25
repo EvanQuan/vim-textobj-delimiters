@@ -7,7 +7,7 @@ text. With Vim's text-objects, these delimited text sections can be edited
 with operators and motions. The block delimiters that Vim already support
 include `(parentheses)`, `[brackets]`, `{braces}`, `"double quotes"`,
 `'single quotes'`, `<angled brackets>`, and `<a>tags<\a>`. This plugin adds
-10 additional block delimiters.
+several additional block delimiters.
 
 Table of Contents
 -----------------
