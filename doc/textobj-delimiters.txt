@@ -1,4 +1,4 @@
-*textobj-delimiters.txt*   For Vim version 8.1     Last change: 2018 December 24
+*textobj-delimiters.txt*   For Vim version 8.1      Last change: 2019 January 02
 
                      _____         _   _____ _     _                           ~
                     |_   _|       | | |  _  | |   (_)                          ~
@@ -38,7 +38,8 @@ CONTENTS                                           *textobj-delimiters-contents*
         3.11 Question Mark..................|textobj-delimiters-question|
         3.12 Slash..........................|textobj-delimiters-slash|
         3.13 Underscore.....................|textobj-delimiters-underscore|
-    4. About................................|textobj-delimiters-about|
+    4. Variables............................|textobj-delimiters-variables|
+    5. About................................|textobj-delimiters-about|
 
 ==============================================================================
 1. Intro                                              *textobj-delimiters-intro*
@@ -201,7 +202,19 @@ Languages like C, Python, and Ruby often use snake case variable names, which
 directories or titles are often in snake case as well.
 
 ==============================================================================
-4. About                                              *textobj-delimiters-about*
+4. Variables                                      *textobj-delimiters-variables*
+
+g:textobj_delimiters#loaded                        *g:textobj_delimiters#loaded*
+
+Type: |Number|
+
+If you wish for this plugin to not load upon startup, include this variable in
+your |vimrc|: >
+
+        let g:textobj_delimiters#loaded = 1
+<
+==============================================================================
+5. About                                              *textobj-delimiters-about*
 
 You can find the most updated version of the plugin from:
 
