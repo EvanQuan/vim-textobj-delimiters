@@ -1,5 +1,8 @@
 # :sunrise_over_mountains: vim-textobj-delimiters
 
+***This plugin is no longer being maintained. Check out [targets.vim](https://github.com/wellle/targets.vim) instead, which does everything this does plus more.***
+
+
 This plugin adds various symbols as delimiting text-objects.
 
 Block delimiters are symbols that mark the beginning and end of a region of
